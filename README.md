@@ -1,4 +1,4 @@
-# Apply Localization and Internationalization
+# Apply Localization and Internationalization DEMO
 
 A Flutter application that shows localization (L10n) and internationalization (i18n) according to the locale that is chosen. Three languages are supported by the app: English, Vietnamese, and Japanese. Depending on the language selected, the default currency is automatically changed to the relevant one.
 
@@ -9,11 +9,8 @@ A Flutter application that shows localization (L10n) and internationalization (i
 - **Dynamic Language Switching:** The application dynamically modifies text and currency formats, and users can choose from a dropdown menu of supported languages.
 
 
-A few resources to get you started if this is your first Flutter project:
+## Project Structure
+- _lib/l10n:_ Contains .arb files with localized strings for English, Vietnamese, and Japanese.
+- _lib/screens/home_screen.dart_: The main screen displaying localized text, currency formatting, and a dropdown for language selection.
+- _lib/services/currency_service.dart:_ Handles fetching real-time currency exchange rates via an external API.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
