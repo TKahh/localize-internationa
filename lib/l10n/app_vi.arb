@@ -1,4 +1,5 @@
 {
+  "@@locale": "vi",
     "helloWorld": "Xin chào thế giới",
     "changeLanguage": "Thay đổi ngôn ngữ",
     "language": "Tiếng Việt",
