@@ -1,4 +1,3 @@
-# file này được sử dụng để làm phương pháp tự động thay vì thủ công
 arb-dir: lib/l10n #LOCALIZATION DIRECTORY LOCATION
 template-arb-file: app_en.arb #DEFAULT TEMPLATE
 output-localization-file: app_localizations.dart #actual generation location
