@@ -17,7 +17,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Locale _locale = L10n.locales.first; // Ngôn ngữ mặc định là tiếng Anh
+  Locale _locale = L10n.locales.first; // Default language is English
 
   void _changeLanguage(Locale locale) {
     setState(() {
@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
         title: 'demo l10n & i18n',
         locale: _locale,
         supportedLocales:
-            L10n.locales, // Sử dụng danh sách locales từ l10n.dart
+            L10n.locales, // Using locales list from l10n.dart
         localizationsDelegates: const [
           AppLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,
