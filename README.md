@@ -14,3 +14,14 @@ A Flutter application that shows localization (L10n) and internationalization (i
 - _lib/screens/home_screen.dart_: The main screen displaying localized text, currency formatting, and a dropdown for language selection.
 - _lib/services/currency_service.dart:_ Handles fetching real-time currency exchange rates via an external API.
 
+## Setup
+An API key for a currency exchange service such as [ExchangeRate API](https://www.exchangerate-api.com)
+### Installation
+1. Clone the repo
+```
+git clone https://github.com/yourusername/your-repo-name.git
+cd your-repo-name
+```
+2. Configure API Key
+- Open lib/services/currency_service.dart.
+- Replace YOUR_API_KEY with your currency exchange API key.
