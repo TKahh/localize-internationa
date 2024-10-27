@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:intl/intl.dart'; //gói intl
+import 'package:intl/intl.dart'; // intl package
 import 'package:demo/l10n/l10n.dart';
 import 'package:demo/services/currency_service.dart';
 
@@ -17,16 +17,16 @@ class _MyHomePageState extends State<MyHomePage> {
   Locale _selectedLocale = L10n.locales.first;
   final CurrencyService _currencyService = CurrencyService();
   double _convertedAmount = 0.0;
-  final double _amount = 120450.125; // Số tiền gốc mặc định
+  final double _amount = 120450.125; // Default money 
 
   @override
   void initState() {
     super.initState();
-    _convertCurrency(); // Thực hiện chuyển đổi khi khởi động ứng dụng
+    _convertCurrency(); // Perform conversion on application startup
   }
 
   Future<void> _convertCurrency() async {
-    String fromCurrency = 'USD'; // Tiền tệ mặc định là USD
+    String fromCurrency = 'USD'; // default currency is USD
     String toCurrency;
 
     // Xác định mã tiền tệ cần chuyển đổi
@@ -35,10 +35,10 @@ class _MyHomePageState extends State<MyHomePage> {
     } else if (_selectedLocale.languageCode == 'ja') {
       toCurrency = 'JPY ';
     } else {
-      toCurrency = 'USD '; // Mặc định là USD
+      toCurrency = 'USD '; 
     }
 
-    //API để lấy tỷ giá chuyển đổi từ money mặc định sang đơn vị tiền tệ mới
+    //API to get conversion rate from default currency to new currency
     double rate =
         await _currencyService.getExchangeRate(fromCurrency, toCurrency);
     setState(() {
@@ -49,14 +49,14 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     Locale currentLocale =
-        Localizations.localeOf(context); // Lấy ngôn ngữ hiện tại của ứng dụng
+        Localizations.localeOf(context); // Get the current language of the application
 
     String formattedDate = DateFormat.yMMMMEEEEd(currentLocale.toString())
-        .format(DateTime.now()); // Định dạng ngày giờ theo ngôn ngữ hiện tại
+        .format(DateTime.now()); // date and time format according to current language
     String formattedTime =
         DateFormat.jm(currentLocale.toString()).format(DateTime.now());
 
-    // Định dạng tiền tệ
+    // currency format
     String formattedCurrency =
         NumberFormat.currency(locale: currentLocale.toString())
             .format(_convertedAmount);
@@ -64,14 +64,14 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!
-            .language), // Hiển thị tên ngôn ngữ hiện tại
+            .language), // Display current language name
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              AppLocalizations.of(context)!.helloWorld, // Hiển thị lời chào
+              AppLocalizations.of(context)!.helloWorld, // Show greeting
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             const SizedBox(height: 20),
@@ -84,8 +84,9 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.titleMedium,
             ),
             const SizedBox(height: 20),
+            // Hiển thị giá trị tiền tệ theo ngôn ngữ hiện tại
             Text(
-              '${AppLocalizations.of(context)!.money}: $formattedCurrency', // Hiển thị giá trị tiền tệ theo ngôn ngữ hiện tại
+              '${AppLocalizations.of(context)!.money}: $formattedCurrency', 
               style: Theme.of(context).textTheme.titleMedium,
             ),
             const SizedBox(height: 20),
@@ -111,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     _selectedLocale = newLocale;
                   });
                   widget.onLocaleChange(newLocale);
-                  _convertCurrency(); // Chuyển đổi số tiền when change languagé
+                  _convertCurrency(); // Convert amount when change language
                 }
               },
             ),
