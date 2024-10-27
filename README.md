@@ -18,10 +18,14 @@ A Flutter application that shows localization (L10n) and internationalization (i
 An API key for a currency exchange service such as [ExchangeRate API](https://www.exchangerate-api.com)
 ### Installation
 1. Clone the repo
-```
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
-```
 2. Configure API Key
 - Open lib/services/currency_service.dart.
 - Replace YOUR_API_KEY with your currency exchange API key.
+3. Run the app:
+```
+flutter run
+```
+## Usage
+- Launch the app.
+- Select a language from the dropdown to change the language and currency format.
+- The amount will automatically convert to the relevant currency based on the selected language.
