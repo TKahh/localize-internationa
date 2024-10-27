@@ -2,8 +2,9 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class CurrencyService {
+  // Change the 'API_KEY to your currency exchange API key.
   final String apiKey =
-      '2d04673d9044f965aa1fc2fd'; // API từ https://www.exchangerate-api.com
+      'API_KEY'; // API từ https://www.exchangerate-api.com
   final String baseUrl = 'https://v6.exchangerate-api.com/v6';
 
   Future<double> getExchangeRate(String fromCurrency, String toCurrency) async {
